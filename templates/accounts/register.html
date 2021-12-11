@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+{% block title %}
+register
+{% endblock title %}
+
+
+{% block content %}
+<div class="container cool">
+    <form action="." method="post" novalidate>
+       <div class="mb-3">
+        {% csrf_token %}
+        {{form |crispy}}
+        <small>have account? <a href="{% url 'accounts:login' %}">login</a></small>
+       </div>
+        <button type="submit"  class="btn btn-primary mb-3">register</button>
+    </form>
+</div>
+{% endblock content %}

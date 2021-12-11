@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    {{object.name}}
+{% endblock title %}
+    
+
+{% block content %}
+<div>
+    <p>
+        created by :{{object.auther}}
+        {{object.timestamp|timesince}}
+    </p>
+    <p>
+        
+        {% if object.image_post %}
+        <p>
+            <img src="{{object.image_post.url}}" class="image_art" alt="">
+        </p>
+        {% endif %}
+
+        <p>{{object.name}}</p>
+
+    </div>
+    </p>
+</div>
+{% endblock content %}
+    

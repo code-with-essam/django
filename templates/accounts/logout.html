@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+{% block title %}
+logout
+{% endblock title %}
+
+
+{% block content %}
+<div class="container">
+    <form action="." method="post" novalidate>
+        {% csrf_token %}
+        <p>are you sure want to logout?</p>
+        <button type="submit"  class="btn btn-primary mb-3">Yes</button>
+    </form>
+</div>
+{% endblock content %}
